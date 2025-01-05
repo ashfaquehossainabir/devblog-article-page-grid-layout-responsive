@@ -149,6 +149,8 @@ button {
 
     --accent: hsl(229, 76%, 66%);
     --accent-dark: hsl(229, 76%, 56%);
+
+    --blog-text: hsl(216, 15%, 40%);
 }
 
 .dark-theme {
@@ -169,6 +171,8 @@ button {
 
     --accent: hsl(229, 76%, 66%);
     --accent-dark: hsl(229, 76%, 56%);
+
+    --blog-text: hsl(211, 25%, 84%);
 }
 
 
@@ -443,7 +447,7 @@ section.contents-section .container .article img {
 section.contents-section .container .article p.blog-text {
     margin-top: 2rem;
     font-size: 1rem; /* var(--fs-4) */
-    color: var(--foreground-secondary);
+    color: var(--blog-text);
 }
 
 
@@ -750,6 +754,12 @@ footer .container img.logo-dark {
 -- Media Queries
 =================================================*/
 
+@media (min-width: 1121px) {
+    .container {
+        padding: 0 25px;
+    }
+}
+
 @media (min-width: 1024px) {
     /*------------------------------
     ** Footer Section 
@@ -785,7 +795,22 @@ footer .container img.logo-dark {
 }
 
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 1120px) {
+    section.contents-section .container {
+        grid-template-columns: 1fr;
+    }
+
+    section.contents-section .container .aside {
+        display: none;
+    }
+
+    section.contents-section .article img {
+        margin: 0 auto;
+    }
+}
+
+
+@media screen and (max-width: 780px) {
 
     /*------------------------------
     ** Nav Section 
@@ -956,10 +981,6 @@ footer .container img.logo-dark {
     ** Contents Section 
     ------------------------------*/
 
-    section.contents-section .container {
-        grid-template-columns: 1fr;
-    }
-
     section.contents-section .container .article h1.h1 {
         font-size: 2.25rem;
     }
@@ -969,8 +990,29 @@ footer .container img.logo-dark {
         height: 280px;
         object-fit: cover;
     }
+}
 
-    section.contents-section .container .aside {
-        display: none;
+
+@media screen and (max-width: 655px) {
+    section.contents-section .container .article h1.h1 {
+        font-size: 1.85rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    section.contents-section .container .article h1.h1 {
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    section.contents-section .container .article h1.h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    section.contents-section .container .article h1.h1 {
+        font-size: 1.35rem;
     }
 }
